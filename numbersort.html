@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="inputFrm">
+    <button id="sortBtn">Sort Number</button>
+    <p>Result Here: <span id="result"></span></p>
+
+
+    <script>
+        let sortbtn = document.getElementById('sortBtn');
+        sortbtn.addEventListener('click', () => {
+            let numInput = document.getElementById('inputFrm').value;
+            let array = numInput.split(",").map(Number);
+            array.sort(function(a, b){return b - a});
+            let sorted = array.join();
+            let andResult = document.getElementById('result');
+            andResult.textContent = array;
+        })
+
+    </script>
+</body>
+</html>
